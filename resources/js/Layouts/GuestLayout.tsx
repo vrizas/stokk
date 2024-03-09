@@ -1,17 +1,23 @@
-import ApplicationLogo from '@/Components/ApplicationLogo';
-import { Link } from '@inertiajs/react';
-import { PropsWithChildren } from 'react';
+import ApplicationLogoWhite from "@/Components/ApplicationLogoWhite";
+import { Link } from "@inertiajs/react";
+import { PropsWithChildren } from "react";
 
 export default function Guest({ children }: PropsWithChildren) {
     return (
-        <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
+        <div className="min-h-screen flex">
+            <div className="w-full px-7 py-8 hidden lg:flex lg:flex-col bg-primary justify-between">
                 <Link href="/">
-                    <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
+                    <ApplicationLogoWhite className="w-28" />
                 </Link>
+                <blockquote className="text-primary-foreground font-semibold space-y-2">
+                    <p className="text-lg">
+                        “The stock market is a device for transferring money
+                        from the impatient to the patient.“
+                    </p>
+                    <footer className="text-sm"> - Warren Buffet</footer>
+                </blockquote>
             </div>
-
-            <div className="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            <div className="w-[60%] px-7 py-8 lg:px-20 flex flex-col items-center justify-center">
                 {children}
             </div>
         </div>
