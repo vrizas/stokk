@@ -31,7 +31,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('admin123'),
         ]);
 
-        // create normal 10 real product types in indonesia
         $productTypes = [
             'Makanan',
             'Minuman',
