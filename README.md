@@ -12,6 +12,12 @@ Stokk is a simple stock management application built with React and TypeScript. 
 | Laravel    | Fullstack PHP framework for web development                      |
 | Postgres   | Open source object-relational database system                    |
 
+## Seeder Accounts
+
+| Email           | Password |
+| --------------- | -------- |
+| admin@gmail.com | admin123 |
+
 ## Project Setup
 
 1. Clone the repository
@@ -26,21 +32,34 @@ git clone https://github.com/vrizas/stokk.git
 cp .env.example .env
 ```
 
-3. Generate the application key
+3. Install the dependencies
+
+```bash
+# for the backend
+composer install
+
+# for the frontend
+npm install
+```
+
+4. Generate the application key
 
 ```bash
 php artisan key:generate
 ```
 
-4. Install the dependencies
+5. Create a postgres database and update the `.env` file with the database credentials
 
 ```bash
-composer install
-
-npm install
+# example
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=postgres
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
 ```
 
-5. Create a postgres database and update the `.env` file with the database credentials
 6. Migrate and seed the database
 
 ```bash
@@ -50,7 +69,9 @@ php artisan migrate --seed
 7. Run the application (open 2 terminals)
 
 ```bash
+# for the frontend
 npm run dev
 
+# for the backend
 php artisan serve
 ```
